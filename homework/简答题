@@ -1,0 +1,216 @@
+### 1.简答题
+-
+    - **区别**：游戏对象会在游戏界面中显示出来，而资源不一定会在界面中显示出来；制作者可以在属性栏中对游戏对象进行修改，而资源的修改一般不能或不在当前界面中进行；资源的范围要比游戏对象大，比如代码文件，unity文件等。
+    - **联系**：游戏对象可以通过拖拉成为资源，资源中的object也可以通过拖拉成为游戏对象，而资源中的代码文件等可以通过拖拉成为游戏对象的绑定事件或属性。
+    
+    
+-
+    - Assert资源目录：Scripts存放脚本代码，Prefabs存放预制，Textures/Icons存放小图标，scence/environment存放环境对象，audio存放音频，animation存放动画，art存放美术用件（有可能有环境对象）。
+    - 游戏对象目录：environment存放环境对象（一般指不会出现交互反应的，main camera和light在这里），player存放人物，goal存放终点，其他的交互对象与上述文件夹同级。
+    
+    
+- 代码如下：
+    ``` C#
+    using System.Collections;
+    using System.Collections.Generic;
+    using UnityEngine;
+
+    public class Init : MonoBehaviour {
+
+    	public Transform table;
+    	void Start () {
+    		Debug.Log ("Start");
+    	}
+    
+    	void OnGUI(){
+    		if (GUILayout.Button ("Press")) {
+    			Debug.Log ("You pressed button.");//log when the button is pressed
+    		}
+    	}
+    
+    	void Update () {
+    		Debug.Log ("Update");
+    	}
+    
+    	void Awake(){
+    		Debug.Log ("Awake");
+    	}
+    
+    	void FixedUpdate(){
+    		Debug.Log ("Fixed Update");
+    	}
+    
+    	void LateUpdate(){
+    		Debug.Log ("Late Update");
+    	}
+    
+    	void OnEnable(){
+    		Debug.Log ("Enable");
+    	}
+    
+    	void OnDisable(){
+    		Debug.Log ("Disable");
+    	}
+    }
+
+    ```
+-
+    -
+        - GameObject：unity视图中所有实例的基本类。
+        - Transform：一个对象的位置，角度和大小。
+        - Component：与游戏对象绑定的所有事物。
+    - table 的对象是 GameObject，属性有activeSelf, isStatic, layer, tag, prefab。Transform的属性有position, rotation, scale。table的组件有Transform, Cube(Mesh Filter), Box Collider, Mesh Renderer。
+    - 
+-
+    - 查找对象
+        ``` C#
+        //find the object named "table"
+    	var target = GameObject.Find("table");
+    	if (target != null)
+    		Debug.Log ("We find the table");
+    	else
+    		Debug.Log ("We can't find the table");
+        ```
+    - 添加子对象
+        ```C#
+        //add a cube as the son of Init
+    	GameObject cube = GameObject.CreatePrimitive (PrimitiveType.Cube);
+    	cube.name = "a cube";
+    	cube.transform.position = new Vector3 (0, Random.Range (0, 5), 0);
+    	cube.transform.parent = this.transform;
+        ```
+    - 遍历对象树
+        ``` C#
+        //find the object tree
+    	Debug.Log ("Level: 0 : " + target.transform.name);
+    	int level = 1;
+    	findAllSon(target, level);
+        ```
+        ``` C#
+        //find the obgect tree
+    	void findAllSon(GameObject target, int level){
+    		for (var i = 0; i < target.transform.childCount; i++) {
+    			Debug.Log ("Level: " + level + ": " + target.transform.GetChild(i).name);
+    			if (target.transform.GetChild (i).transform.childCount > 0) {
+    				findAllSon (target.transform.GetChild (i).gameObject, level + 1);
+    			}
+    		}
+    	}
+        ```
+    - 清除所有子对象
+        ``` c#
+        //clear all son of object
+    	clearSon(target);
+        ```
+        ``` C#
+        //clear all son of object
+    	void clearSon(GameObject target){
+    		for (var i = 0; i < target.transform.childCount; i++) {
+    			Destroy (target.transform.GetChild(i).gameObject);
+    		}
+    	}
+        ```
+-
+    - 预设可以重复创建多个结构相同的游戏对象和他们的相对关系，节省操作时间的同时批量制造。
+    - 预设与克隆都可以以一个标准进行批量生产游戏对象，对于预设来说就是资源目录中的模板，对于克隆来说就是被克隆对象。区别在于克隆需要场景中有被克隆对象，预设则不需要，克隆体不会随被克隆体改变而改变，预设生成物会随预设改变而改变。可以说，预设生成物是预设的瞬时克隆体。
+    - 预设实例化
+        ```C#
+        GameObject newTable = (GameObject)Instantiate(Resources.Load("Prefabs/table")); 
+        ```
+-
+    - 组合模式在unity中的表现就是游戏对象的树状结构，它将一组对象当作一个对象进行处理，比较直观的就是之前的预制，我们可以将整个对象树作为一个对象进行预制，子节点位置都是相对根节点设置，还有广播函数，它是叶节点的接口一致化的结果，通过这样就可以通过根节点对整个对象树进行操作，是化零为整的典型例子。
+    - 根节点table：
+        ``` C#
+        public class table : MonoBehaviour {
+
+        	// Use this for initialization
+        	void Start () {
+        		//Debug.Log ("Camera Start");
+        	}
+        
+        	void Awake(){
+        		int count = 0;
+        		BroadcastMessage("count", count);
+        	}
+        	
+        	// Update is called once per frame
+        	void Update () {
+        		// Debug.Log ("Camera Update");
+        	}
+        }
+        ```
+        叶节点chair1，chair2，chair3，chair4：
+        ``` C#
+        public class chair1 : MonoBehaviour {
+
+        	public int no = 1;
+        	// Use this for initialization
+        	void Start () {
+        		
+        	}
+        
+        	void count(int number){
+        		Debug.Log (no + number);
+        	}
+        	// Update is called once per frame
+        	void Update () {
+        		
+        	}
+        }
+        ```
+        ``` C#
+        public class chair2 : MonoBehaviour {
+
+        	public int no = 2;
+        	// Use this for initialization
+        	void Start () {
+        
+        	}
+        
+        	void count(int number){
+        		Debug.Log (no + number);
+        	}
+        	// Update is called once per frame
+        	void Update () {
+        		
+        	}
+        }
+        ```
+        ``` C#
+        public class chair3 : MonoBehaviour {
+
+            	public int no = 3;
+            	// Use this for initialization
+            	void Start () {
+            
+            	}
+            
+            	void count(int number){
+            		Debug.Log (no + number);
+            	}
+            	// Update is called once per frame
+            	void Update () {
+            		
+            	}
+            }
+        ```
+        ``` C#
+        public class chair4 : MonoBehaviour {
+
+        	public int no = 4;
+        	// Use this for initialization
+        	void Start () {
+        
+        	}
+        
+        	void count(int number){
+        		Debug.Log (no + number);
+        	}
+        	// Update is called once per frame
+        	void Update () {
+        		
+        	}
+        }
+        ```
+    
+### 2.编程题
