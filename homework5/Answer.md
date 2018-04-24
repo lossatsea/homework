@@ -549,4 +549,4 @@ void Update ()
 - 删除SSActionManager类
 - 有改动的代码全部解析完毕
 
-##### （5）[视频演示]()
+##### （5）[视频演示](http://v.youku.com/v_show/id_XMzU2MDIxMTY5Mg==.html?spm=a2h3j.8428770.3416059.1)（电脑加载不出来的话可以用手机观看）
