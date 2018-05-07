@@ -45,10 +45,30 @@
 ### 游戏素材
 
 1. 玩家
+
+	![player](https://github.com/lossatsea/homework/blob/master/homework6/Pictures/character.png)
+
 2. 巡逻兵
+
+	![monster](https://github.com/lossatsea/homework/blob/master/homework6/Pictures/monster.png)
+
 3. 天空盒
+
+	![skybox](https://github.com/lossatsea/homework/blob/master/homework6/Pictures/sky.png)
+
 4. 墙贴图
+
+	![wall](https://github.com/lossatsea/homework/blob/master/homework6/Pictures/wall.png)
+
+5. 水晶贴图
+
+	![diamond](https://github.com/lossatsea/homework/blob/master/homework6/Pictures/diamond.png)
+	
+	![diamond](https://github.com/lossatsea/homework/blob/master/homework6/Pictures/diamond1.png)
+
 5. 自制预制
+
+	地图预制，Plane
 
 当然素材下载下来之后还要进行各种调整来符合去求
 
