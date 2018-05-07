@@ -31,6 +31,9 @@
 4. 地图
 
     - 如图
+    
+    ![map](https://github.com/lossatsea/homework/blob/master/homework6/Pictures/map.png)
+    
     - 最上端区域为安全区域，不会出现巡逻兵，玩家会在安全区域开始游戏
     - 中间区域为特殊区域，只有一个出入口。
     - 其余区域为普通区域
