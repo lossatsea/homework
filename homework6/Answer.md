@@ -66,7 +66,6 @@
 5. 水晶贴图
 
 	![diamond](https://github.com/lossatsea/homework/blob/master/homework6/Pictures/diamond.png)
-	
 	![diamond](https://github.com/lossatsea/homework/blob/master/homework6/Pictures/diamond1.png)
 
 5. 自制预制
