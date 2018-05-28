@@ -12,7 +12,7 @@
 
 新建空对象myParticle，给myParticle新建两个空对象outer和inter，分别表示内层光环和外层光环。
 
-![结构图](https://github.com/lossatsea/homework/blob/master/homework7/pictures/0.png);
+![结构图](https://github.com/lossatsea/homework/blob/master/homework7/pictures/0.png)
 
 给outer和inter添加Particle System的组件，不用更改什么属性。下面主要针对outer，即外层光环进行说明。
 
@@ -113,7 +113,7 @@ void randomLocationAndSize(){
 
 这样就随机初始化好了。将particle代码文件挂载到outer上，运行为下面的效果：
 
-![静态](https://github.com/lossatsea/homework/blob/master/homework7/pictures/1.png);
+![静态](https://github.com/lossatsea/homework/blob/master/homework7/pictures/1.png)
 
 #### 4. 动起来
 
@@ -151,7 +151,7 @@ particles [i].angle -= (i % tier + 1) * (speed / particles[i].radius / tier)；/
 
 后边的变量使得运动半径越大的粒子运动叫速度越慢，此时的效果为：
 
-![gif2](https://github.com/lossatsea/homework/blob/master/homework7/pictures/2.gif);
+![gif2](https://github.com/lossatsea/homework/blob/master/homework7/pictures/2.gif)
 
 #### 5. 浮游
 
@@ -166,7 +166,7 @@ particles [i].radius += Mathf.PingPong (particles [i].time / collect_MinRadius /
 
 浮游效果：
 
-![gif3](https://github.com/lossatsea/homework/blob/master/homework7/pictures/3.gif);
+![gif3](https://github.com/lossatsea/homework/blob/master/homework7/pictures/3.gif)
 
 #### 6. 透明度和颜色
 
@@ -206,7 +206,7 @@ particleArr [i].startColor = gradient.Evaluate (light);
 
 效果如下，可能有点不明显，但其实是一闪一闪的：
 
-![gif4](https://github.com/lossatsea/homework/blob/master/homework7/pictures/4.gif);
+![gif4](https://github.com/lossatsea/homework/blob/master/homework7/pictures/4.gif)
 
 #### 7. 扩展和收缩
 
@@ -302,7 +302,7 @@ else {
 
 效果如下：
 
-![gif5](https://github.com/lossatsea/homework/blob/master/homework7/pictures/5.gif);
+![gif5](https://github.com/lossatsea/homework/blob/master/homework7/pictures/5.gif)
 
 我们发现会遇到“卡壳”的情况，这是因为点击事件的触发过于敏感，依次点击有可能触发很多次点击事件，因此我们要进行“消抖”：
 
@@ -324,7 +324,7 @@ if(Input.GetMouseButton(0) ){
 
 消抖后效果如下：
 
-![gif6](https://github.com/lossatsea/homework/blob/master/homework7/pictures/6.gif);
+![gif6](https://github.com/lossatsea/homework/blob/master/homework7/pictures/6.gif)
 
 这样就顺畅很多了。这样outer就大功告成了！
 
@@ -346,10 +346,10 @@ else
 
 下面就是在界面里手动调节参数（其实也可以在代码里初始化，但是我懒）：
 
-![inner](https://github.com/lossatsea/homework/blob/master/homework7/pictures/2.png);
+![inner](https://github.com/lossatsea/homework/blob/master/homework7/pictures/2.png)
 
 #### 最终效果
 
-![gif7](https://github.com/lossatsea/homework/blob/master/homework7/pictures/7.gif);
+![gif7](https://github.com/lossatsea/homework/blob/master/homework7/pictures/7.gif)
 
 你还可以改变一下内环和外环的颜色，有哪个颜色条变量，总之随心所欲喽。
