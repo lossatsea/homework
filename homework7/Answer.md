@@ -352,4 +352,4 @@ else
 
 ![gif7](https://github.com/lossatsea/homework/blob/master/homework7/pictures/7.gif)
 
-你还可以改变一下内环和外环的颜色，有哪个颜色条变量，总之随心所欲喽。
+你还可以改变一下内环和外环的颜色，用那个颜色条变量，总之随心所欲喽。
