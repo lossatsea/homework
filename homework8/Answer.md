@@ -18,7 +18,7 @@ Scroll View的大小和content的高度根据需要自行设置，我的是Scrol
 
 ![button](https://github.com/lossatsea/homework/blob/master/homework8/pictures/button.png)
 
-![text](https://github.com/lossatsea/homework/blob/master/homework8/pictures/text.png)
+![text](https://github.com/lossatsea/homework/blob/master/homework8/pictures/text2.png)
 
 剩余的button同理，调整一下text和button的颜色后最终效果如下：
 
