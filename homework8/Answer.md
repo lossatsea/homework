@@ -4,25 +4,25 @@
 
 点击公告，如果是展示状态则折叠，如果是折叠状态则展示，下面的所有公告相应进行移动，当有公告在移动时点击无响应：
 
-![effect]()
+![effect](https://github.com/lossatsea/homework/blob/master/homework8/pictures/effect.gif)
 
 #### 1. UI设置
 
 首先新建一个Canavs命名为Bulletin board，新建子对象image作为背景图片和Scroll View作为公告栏，在Scroll View中新建image作为公告的背景，Viewport的content对象中新建4个buton作为测试公告，button中除了一个title文本外，新建一个内容文本，新建完成后的结构图如下：
 
-![frame]()
+![frame](https://github.com/lossatsea/homework/blob/master/homework8/pictures/frame.png)
 
 Scroll View的大小和content的高度根据需要自行设置，我的是Scroll View为400 * 400, content高500.
 
 下面设置button的位置，所有button发锚点都对准content的最上边的中点，根据需要设置内容文本的高度和button相应的位置，我的第一个公告的设置如下：
 
-![button]()
+![button](https://github.com/lossatsea/homework/blob/master/homework8/pictures/button.png)
 
-![text]()
+![text](https://github.com/lossatsea/homework/blob/master/homework8/pictures/text.png)
 
 剩余的button同理，调整一下text和button的颜色后最终效果如下：
 
-![final]()
+![final](https://github.com/lossatsea/homework/blob/master/homework8/pictures/final.png)
 
 #### 2. 新建代码
 
