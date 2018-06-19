@@ -688,4 +688,4 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour {
 
 ### 4. 视频演示
 
-[video]()
+[video](http://www.iqiyi.com/w_19ryzsugl1.html)
