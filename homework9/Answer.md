@@ -27,42 +27,42 @@
 
 在游戏商店下载“Tanks! Tutorial”
 
-![素材]()
+![素材](https://github.com/lossatsea/homework/blob/master/homework9/pictures/%E7%B4%A0%E6%9D%90.png)
 
 自制地图后bake：
 
-![map]()
+![map](https://github.com/lossatsea/homework/blob/master/homework9/pictures/%E5%9C%B0%E5%9B%BE%20(1).png)
 
-![map]()
+![map](https://github.com/lossatsea/homework/blob/master/homework9/pictures/%E5%9C%B0%E5%9B%BE%20(2).png)
 
 预制的地图，坦克和子弹：
 
-![map]()
-![tank]()
-![tank]()
-![bullet]()
+![map](https://github.com/lossatsea/homework/blob/master/homework9/pictures/%E9%A2%84%E5%88%B6%20(1).png)
+![tank](https://github.com/lossatsea/homework/blob/master/homework9/pictures/%E9%A2%84%E5%88%B6%20(2).png)
+![tank](https://github.com/lossatsea/homework/blob/master/homework9/pictures/%E9%A2%84%E5%88%B6%20(3).png)
+![bullet](https://github.com/lossatsea/homework/blob/master/homework9/pictures/%E9%A2%84%E5%88%B6%20(4).png)
 
 在enemy，player上有碰撞器，地图上的几个比较重要的建筑也加上了碰撞器，而子弹有触发器：
 
-![tank]()
-![tank_pengzhaung]()
+![tank](https://github.com/lossatsea/homework/blob/master/homework9/pictures/%E7%A2%B0%E6%92%9E%E5%99%A8%20(1).png)
+![tank_pengzhaung](https://github.com/lossatsea/homework/blob/master/homework9/pictures/%E7%A2%B0%E6%92%9E%E5%99%A8%20(2).png)
 
-![bullet]()
-![bullet_chufa]()
+![bullet](https://github.com/lossatsea/homework/blob/master/homework9/pictures/%E8%A7%A6%E5%8F%91%E5%99%A8%20(1).png)
+![bullet_chufa](https://github.com/lossatsea/homework/blob/master/homework9/pictures/%E8%A7%A6%E5%8F%91%E5%99%A8%20(2).png)
 
 enemy，player，bullet有不同的行为，他们都是刚体：
 
-![action]()
+![action](https://github.com/lossatsea/homework/blob/master/homework9/pictures/cation%20(1).png)
 
-![action]()
+![action](https://github.com/lossatsea/homework/blob/master/homework9/pictures/cation%20(2).png)
 
-![action]()
+![action](https://github.com/lossatsea/homework/blob/master/homework9/pictures/cation%20(3).png)
 
-enemy和player都有作为坦克的数据类，它们都有NavMeshAgent：
+enemy和player都有作为坦克的数据类，它们都是NavMeshAgent：
 
-![data]()
+![data](https://github.com/lossatsea/homework/blob/master/homework9/pictures/tank_data%20(1).png)
 
-![data]()
+![data](https://github.com/lossatsea/homework/blob/master/homework9/pictures/tank_data%20(2).png)
 
 ### 3. 代码分析
 
@@ -557,9 +557,9 @@ public class EnemyAction : MonoBehaviour {
 
 导航和用来检测的射线：
 
-![gif]()
+![gif](https://github.com/lossatsea/homework/blob/master/homework9/pictures/find%20(1).gif)
 
-![gif]()
+![gif](https://github.com/lossatsea/homework/blob/master/homework9/pictures/find%20(2).gif)
 
 - bulletAction
 
