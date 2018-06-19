@@ -47,8 +47,8 @@
 ![tank](https://github.com/lossatsea/homework/blob/master/homework9/pictures/%E7%A2%B0%E6%92%9E%E5%99%A8%20(1).png)
 ![tank_pengzhaung](https://github.com/lossatsea/homework/blob/master/homework9/pictures/%E7%A2%B0%E6%92%9E%E5%99%A8%20(2).png)
 
-![bullet](https://github.com/lossatsea/homework/blob/master/homework9/pictures/%E8%A7%A6%E5%8F%91%E5%99%A8%20(1).png)
-![bullet_chufa](https://github.com/lossatsea/homework/blob/master/homework9/pictures/%E8%A7%A6%E5%8F%91%E5%99%A8%20(2).png)
+![bullet](https://github.com/lossatsea/homework/blob/master/homework9/pictures/%E8%A7%A6%E5%8F%91%E5%99%A8%20(2).png)
+![bullet_chufa](https://github.com/lossatsea/homework/blob/master/homework9/pictures/%E8%A7%A6%E5%8F%91%E5%99%A8%20(1).png)
 
 enemy，player，bullet有不同的行为，他们都是刚体：
 
