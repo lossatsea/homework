@@ -10,21 +10,21 @@
 
 在Assert Store中搜索“Lake Race Track”进行下载
 
-![picture]()
+![picture](https://github.com/lossatsea/homework/blob/master/homework10/pictures/store.png)
 
 用已有的预制和模型制作自己的场景，下面是我的场景：
 
-![picture]()
+![picture](https://github.com/lossatsea/homework/blob/master/homework10/pictures/scene.png)
 
-![pic]()
+![pic](https://github.com/lossatsea/homework/blob/master/homework10/pictures/scene3.png)
 
-![pic]()
+![pic](https://github.com/lossatsea/homework/blob/master/homework10/pictures/scene2.png)
 
 - **NetworkManager**
 
 设置网络控制器（Network Manager）和 用户控制界面（Network Manager HUD，供玩家找到并加入游戏）
 
-![pic]()
+![pic](https://github.com/lossatsea/homework/blob/master/homework10/pictures/manager.png)
 
 - **胜利条件**
 
@@ -34,7 +34,7 @@
 
 因此gate和goal都在公路上，且goal在终点处，gate在goal的前面（先经过）调整位置和角度：
 
-![pic]()
+![pic](https://github.com/lossatsea/homework/blob/master/homework10/pictures/gate_goal.png)
 
 > GateTrigger: gate的触发事件
 
@@ -86,11 +86,12 @@ public class GoalTrigger : MonoBehaviour {
 
 设置为网络对象：
 
-![pic]()
+![pic](https://github.com/lossatsea/homework/blob/master/homework10/pictures/gate.png)
+![pic](https://github.com/lossatsea/homework/blob/master/homework10/pictures/goal.png)
 
 加入到网络管理器中：
 
-![pic]()
+![pic](https://github.com/lossatsea/homework/blob/master/homework10/pictures/gate_goal2.png)
 
 - **Director和GUI**
 
@@ -178,7 +179,7 @@ public class UserGUI : MonoBehaviour {
 
 游戏对象都通过读取Diector中的state知道当前的游戏状态，至于gameOver的参数flag怎么得到，往下看就知道了。
 
-![pic]()
+![pic](https://github.com/lossatsea/homework/blob/master/homework10/pictures/Director.png)
 
 - **两个起始位置**
 
@@ -192,7 +193,7 @@ public class UserGUI : MonoBehaviour {
 
 到目前为止这个游戏的Hierarchy界面应该有以下的游戏对象：
 
-![pic]()
+![pic](https://github.com/lossatsea/homework/blob/master/homework10/pictures/h.png)
 
 - **玩家角色**
 
@@ -200,25 +201,22 @@ public class UserGUI : MonoBehaviour {
 
 先换一下外观，看起来更帅气一点，注意更改的是SkyCarBody的Materia：
 
-![pic]()
+![pic](https://github.com/lossatsea/homework/blob/master/homework10/pictures/carBody.png)
 
-![pic]()
-
-更改后：
-
-![pic]()
+![pic](https://github.com/lossatsea/homework/blob/master/homework10/pictures/carBody2.png)
 
 之后在车的最外面的对象上加上碰撞器，好让gate和goal检测到的碰撞体的tag是player：
 
-![pic]()
+![pic](https://github.com/lossatsea/homework/blob/master/homework10/pictures/collider2.png)
 
-![pic]()
+更改后：
+
+![pic](https://github.com/lossatsea/homework/blob/master/homework10/pictures/collider.png)
 
 为了让摄像机一直跟着玩家对象，可以在car里加一个空游戏对象，然后让摄像机的位置和它保持一致：
 
-![pic]()
-
-![pic]()
+![pic](https://github.com/lossatsea/homework/blob/master/homework10/pictures/look.png)
+![pic](https://github.com/lossatsea/homework/blob/master/homework10/pictures/look2.png)
 
 现在的车的操作不是联网的，因此我们要稍微修改一下，打开CarUserControl脚本
 
@@ -267,7 +265,7 @@ namespace UnityStandardAssets.Vehicles.Car
 
 再加上NetworkIdentity和NetworkTransform
 
-![pic]()
+![pic](https://github.com/lossatsea/homework/blob/master/homework10/pictures/player1.png)
 
 之后就编写自己的脚本了，主要要实现的有：
 
@@ -291,7 +289,7 @@ namespace UnityStandardAssets.Vehicles.Car
 
 ```
 
-![pic]()
+![pic](https://github.com/lossatsea/homework/blob/master/homework10/pictures/player.png)
 
 在Start的时候初始化唯一Director和flag，这里要知道host一定比client游戏开始的早，因此一定是host先start，host时LinkNum一定为0，加一后，client时LinkNum一定为1，就这样区分了host和client
 
@@ -331,7 +329,7 @@ void Update () {
 
 效果：
 
-![gif]()
+![gif](https://github.com/lossatsea/homework/blob/master/homework10/pictures/canera.gif)
 
 判断输赢时要放在判断本地对象前面，因为这个判断结果要在服务器和客户端都有反应（但修改游戏状态的只有服务器）：
 
@@ -387,7 +385,7 @@ void Update () {
 
 效果：
 
-![gif]()
+![gif](https://github.com/lossatsea/homework/blob/master/homework10/pictures/restart.gif)
 
 当游戏结束时，游戏对象的速度变成0，刚体休眠：
 
