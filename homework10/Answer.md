@@ -178,7 +178,7 @@ public class UserGUI : MonoBehaviour {
 
 游戏对象都通过读取Diector中的state知道当前的游戏状态，至于gameOver的参数flag怎么得到，往下看就知道了。
 
-![pic](https://github.com/lossatsea/homework/blob/master/homework10/pictures/Director.png)
+![pic](https://github.com/lossatsea/homework/blob/master/homework10/pictures/Diector.png)
 
 - **两个起始位置**
 
