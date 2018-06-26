@@ -59,7 +59,7 @@ public class GateTrigger : NetworkBehaviour {
 
 设置为网络对象：
 
-![pic]()
+![pic](https://github.com/lossatsea/homework/blob/master/homework10/pictures/gate.png)
 
 > GoalTrigger：goal的触发事件
 
@@ -86,7 +86,6 @@ public class GoalTrigger : MonoBehaviour {
 
 设置为网络对象：
 
-![pic](https://github.com/lossatsea/homework/blob/master/homework10/pictures/gate.png)
 ![pic](https://github.com/lossatsea/homework/blob/master/homework10/pictures/goal.png)
 
 加入到网络管理器中：
